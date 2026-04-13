@@ -7,9 +7,9 @@ WebServer::WebServer()
 
     //root文件夹路径
     char server_path[200];
-    getcwd(server_path, 200);
+    getcwd(server_path, 200);//指定缓冲区大小，超过返回null
     char root[6] = "/root";
-    m_root = (char *)malloc(strlen(server_path) + strlen(root) + 1);
+    m_root = (char *)malloc(strlen(server_path) + strlen(root) + 1);//m_root服务器根目录，new可以保证文件调用完后不自动销毁
     strcpy(m_root, server_path);
     strcat(m_root, root);
 
